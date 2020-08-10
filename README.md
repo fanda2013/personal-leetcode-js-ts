@@ -1,3 +1,3 @@
-# Personal Leetcode Problem solutions in JavaScript and TypeScript
+# Personal Leetcode Problem solutions in JS and TS
 
 - Two Sum
