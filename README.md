@@ -1,4 +1,4 @@
-# Personal Leetcode Problem solutions in JS and TS
+# Personal Leetcode Problem solutions in TS
 
 - Two Sum
 - Add Two Numbers
