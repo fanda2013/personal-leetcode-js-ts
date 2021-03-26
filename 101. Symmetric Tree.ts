@@ -11,7 +11,6 @@
  * @return {boolean}
  */
 var isSymmetric = function (root) {
-    if (root === null) return true
 
     const checkSymmetric = (left, right) => {
         if (left === null && right === null) return true
