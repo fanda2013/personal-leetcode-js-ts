@@ -7,18 +7,18 @@
  * }
  */
 /**
- * @param {TreeNode} t1
- * @param {TreeNode} t2
+ * @param {TreeNode} root1
+ * @param {TreeNode} root2
  * @return {TreeNode}
  */
-var mergeTrees = function (t1, t2) {
-    if (!t1) return t2
-    if (!t2) return t1
+var mergeTrees = function (root1, root2) {
+    if (!root1) return root2
+    if (!root2) return root1
 
-    t1.val += t2.val
+    root1.val += root2.val
 
-    t1.left = mergeTrees(t1.left, t2.left)
-    t1.right = mergeTrees(t1.right, t2.right)
+    root1.left = mergeTrees(root1.left, root2.left)
+    root1.right = mergeTrees(root1.right, root2.right)
 
-    return t1
+    return root1
 };
