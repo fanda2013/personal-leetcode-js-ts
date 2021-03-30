@@ -11,9 +11,7 @@
  * @return {TreeNode}
  */
 var invertTree = function (root) {
-    if (root == null) return null;
-
+    if (!root) return null;
     [root.left, root.right] = [invertTree(root.right), invertTree(root.left)]
-
     return root
 };

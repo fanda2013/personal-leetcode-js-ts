@@ -3,10 +3,11 @@
  * @return {number}
  */
 var singleNumber = function (nums) {
-    let hash = {}
-    for (let item of nums) {
-        hash[item] ? delete hash[item] : hash[item] = true
+    const obj = {}
+
+    for (let i of nums) {
+        obj[i] ? delete obj[i] : obj[i] = true
     }
 
-    return Object.keys(hash)[0]
+    return Object.keys(obj)[0]
 };
