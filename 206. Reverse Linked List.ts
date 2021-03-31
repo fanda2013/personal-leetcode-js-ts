@@ -10,10 +10,10 @@
  * @return {ListNode}
  */
 var reverseList = function (head) {
-    let [prev, current] = [null, head]
-    while (current) {
-        // 相当于改变指针
-        [current.next, prev, current] = [prev, current, current.next]
+    let prev = null, curr = head;
+
+    while (curr) {
+        [curr.next, prev, curr] = [prev, curr, curr.next]
     }
 
     return prev
