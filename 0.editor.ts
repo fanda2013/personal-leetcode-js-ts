@@ -1,11 +1,27 @@
 /**
- * @param {number[]} nums
- * @return {number[]}
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
  */
-var findDisappearedNumbers = function (nums) {
-    const arr = nums.map((_, i) => i + 1)
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var diameterOfBinaryTree = function (root) {
+    let diameter = 0
+    const dfs = root => {
+        if (!root) return 0
+        const left = dfs(root.left)
+        const right = dfs(root.right)
 
-    for (let num of nums) arr[num - 1] = null
+        diameter = Math.max(diameter, left + right)
+        return 1 + Math.max(left, right)
+    }
 
-    return arr.filter(num => num !== null)
+    dfs(root)
+
+    return diameter
 };
