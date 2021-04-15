@@ -1,27 +1,15 @@
 /**
- * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
- * }11
- */
-/**
- * @param {TreeNode} root
+ * @param {number[]} nums
  * @return {number}
  */
-var diameterOfBinaryTree = function (root) {
-    let diameter = 0
-    const dfs = root => {
-        if (!root) return 0
-        const left = dfs(root.left)
-        const right = dfs(root.right)
+var maxSubArray = function (nums) {
+    let prev = 0
+    let max = nums[0]
 
-        diameter = Math.max(diameter, left + right)
-        return 1 + Math.max(left, right)
+    for (let i = 0; i < nums.length; i++) {
+        prev = Math.max(prev + nums[i], nums[i])
+        max = Math.max(max, prev)
     }
 
-    dfs(root)
-
-    return diameter
+    return max
 };
