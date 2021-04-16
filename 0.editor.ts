@@ -1,15 +1,23 @@
 /**
- * @param {number[]} nums
- * @return {number}
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
  */
-var maxSubArray = function (nums) {
-    let prev = 0
-    let max = nums[0]
 
-    for (let i = 0; i < nums.length; i++) {
-        prev = Math.max(prev + nums[i], nums[i])
-        max = Math.max(max, prev)
+/**
+ * @param {ListNode} headA
+ * @param {ListNode} headB
+ * @return {ListNode}
+ */
+var getIntersectionNode = function (headA, headB) {
+    let currA = headA, currB = headB
+
+    while (currA !== currB) {
+        currA = currA ? currA.next : headB
+        currB = currB ? currB.next : headA
     }
 
-    return max
+    return currA
 };
