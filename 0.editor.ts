@@ -1,23 +1,25 @@
 /**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
+ * @param {string} s
+ * @return {boolean}
  */
+var isValid = function (s) {
+    const stack = []
 
-/**
- * @param {ListNode} headA
- * @param {ListNode} headB
- * @return {ListNode}
- */
-var getIntersectionNode = function (headA, headB) {
-    let currA = headA, currB = headB
-
-    while (currA !== currB) {
-        currA = currA ? currA.next : headB
-        currB = currB ? currB.next : headA
+    for (let i = 0; i < s.length; i++) {
+        switch (s[i]) {
+            case '(':
+                stack.push(')')
+                break
+            case '[':
+                stack.push(']')
+                break
+            case '{':
+                stack.push('}')
+                break
+            default:
+                if (stack.pop() !== s[i]) return false
+        }
     }
 
-    return currA
+    return stack.length === 0
 };
