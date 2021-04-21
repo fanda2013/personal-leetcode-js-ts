@@ -7,7 +7,7 @@ var reverseString = function (s) {
 
     while (i < j) {
         [s[i], s[j]] = [s[j], s[i]];
-        i++;
-        j--;
+        i++
+        j--
     }
 };

@@ -1,25 +1,15 @@
 /**
- * @param {string} s
- * @return {boolean}
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
  */
-var isValid = function (s) {
-    const stack = []
-
-    for (let i = 0; i < s.length; i++) {
-        switch (s[i]) {
-            case '(':
-                stack.push(')')
-                break
-            case '[':
-                stack.push(']')
-                break
-            case '{':
-                stack.push('}')
-                break
-            default:
-                if (stack.pop() !== s[i]) return false
-        }
-    }
-
-    return stack.length === 0
+/**
+ * @param {ListNode} node
+ * @return {void} Do not return anything, modify node in-place instead.
+ */
+var deleteNode = function (node) {
+    node.val = node.next.val
+    node.next = node.next.next
 };
