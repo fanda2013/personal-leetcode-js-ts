@@ -1,15 +1,20 @@
 /**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
+ * @param {number} n
+ * @return {string[]}
  */
-/**
- * @param {ListNode} node
- * @return {void} Do not return anything, modify node in-place instead.
- */
-var deleteNode = function (node) {
-    node.val = node.next.val
-    node.next = node.next.next
+var fizzBuzz = function (n) {
+    const arr = []
+    let i = 1
+
+    while (i <= n) {
+        let element = i + ''
+        if (i % 3 === 0) element = "Fizz"
+        if (i % 5 === 0) element = "Buzz"
+        if (i % 3 === 0 && i % 5 === 0) element = "FizzBuzz"
+
+        arr.push(element)
+        i++
+    }
+
+    return arr
 };

@@ -11,6 +11,7 @@ var fizzBuzz = function (n) {
         if (i % 3 === 0) element = "Fizz"
         if (i % 5 === 0) element = "Buzz"
         if (i % 3 === 0 && i % 5 === 0) element = "FizzBuzz"
+
         arr.push(element)
         i++
     }
