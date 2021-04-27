@@ -3,14 +3,13 @@
  * @return {number}
  */
 var titleToNumber = function (columnTitle) {
-    const arr = columnTitle.split('').reverse()
-    let number = 0
+    const arr = columnTitle.split("").reverse()
+    let num = 0
 
     arr.forEach((char, i) => {
-        const value = (char.charCodeAt(0) - 64) * Math.pow(26, i)
-        number += value
+        const value = (char.charCodeAt(0) - 64) * (26 ** i)
+        num += value
     });
 
-    return number
+    return num
 };
-
