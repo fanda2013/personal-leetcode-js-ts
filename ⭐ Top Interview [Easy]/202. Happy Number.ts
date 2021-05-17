@@ -8,7 +8,7 @@ var isHappy = function (n) {
 
     const getSum = n => {
         const arr = (n + '').split('').map(string => Number.parseInt(string))
-        const sum = arr.reduce((accum, curr) => accum + Math.pow(curr, 2), 0)
+        const sum = arr.reduce((accum, curr) => accum + curr ** 2, 0)
         return sum
     }
 
